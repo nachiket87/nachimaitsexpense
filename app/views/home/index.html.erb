@@ -1,6 +1,6 @@
 <h1 class="text-3xl font-bold underline">
-    This Month: 360$
+    This Month: <%= @last_months_transactions.sum(:amount) %>
 </h1>
 <h1 class="text-3xl font-bold underline">
-    Last Month: 360$
+    This Month: <%= @this_months_transactions.sum(:amount) %>
 </h1>
