@@ -2,13 +2,14 @@ class TransactionsController < ActionController::Base
   before_action :set_transactions
 
   def create
-
     @transaction = Transaction.new(amount: permitted_params[:amount])
 
-    if @transaction.save
-      redirect_to root_path
-    else
-      render 'home/index', status: :unprocessable_entity
+    respond_to do |format|
+      if @transaction.save
+        format.html { redirect_to root_path }
+      else
+        format.html { render 'home/index', status: :unprocessable_entity}
+      end
     end
   end
 
