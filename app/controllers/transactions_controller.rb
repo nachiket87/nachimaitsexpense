@@ -8,7 +8,7 @@ class TransactionsController < ActionController::Base
     if @transaction.save
       redirect_to root_path
     else
-      render 'home/index'
+      render 'home/index', status: :unprocessable_entity
     end
   end
 
