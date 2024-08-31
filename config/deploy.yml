@@ -21,17 +21,11 @@ registry:
 accessories:
  db:
    image: postgres:14.0
-   host: db.internal
+   host: 137.184.137.155
    port: 5432
    env:
      secret:
        - NACHIMAITSEXPENSE_DATABASE_PASSWORD
-hooks:
-  pre_build:
-    - command: bin/rails assets:precompile
-  post_deploy:
-    - command: bin/rails db:migrate
-    - command: bin/rails cache:clear
 
 healthcheck:
   path: /up
