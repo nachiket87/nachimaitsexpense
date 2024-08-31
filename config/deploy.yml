@@ -21,7 +21,7 @@ registry:
 accessories:
  db:
    image: postgres:14.0
-   host: 137.184.137.155
+   host: 142.93.67.87
    port: 5432
    env:
      secret:
