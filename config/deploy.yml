@@ -12,6 +12,7 @@ servers:
 env:
   secret:
     - DATABASE_URL
+    - RAILS_MASTER_KEY
 
 registry:
   username: nachiket87
